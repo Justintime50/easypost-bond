@@ -1,8 +1,10 @@
 #!/bin/bash
 
+source ../.env
+
 curl --location --request POST https://public-api.int01.withbond.io/api/v1/orders \
-    --header 'X-BOND-KEY: 123...' \
-    --header 'Content-Type: application/json' \
+    --header "X-BOND-KEY: $WITHBOND_API_KEY" \
+    --header "Content-Type: application/json" \
     --data-raw '{
         "type": "DELIVER",
         "receiver": {
@@ -19,7 +21,7 @@ curl --location --request POST https://public-api.int01.withbond.io/api/v1/order
         {
             "items": [
                 {
-                    "sku": "12",
+                    "sku": "13",
                     "quantity": 2
                 }
             ],
