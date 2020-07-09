@@ -6,7 +6,12 @@ class Shipment():
     """Shipment methods"""
     @classmethod
     def create(cls, data):
-        """Create a customer based on the data passed"""
-        endpoint = f'{Client.API_BASE_URL}orders'
-        response = Client.response(data, endpoint)
+        """Create a shipment based on the data passed"""
+        endpoint = f'{Client.API_BASE_URL}/orders'
+        response = Client.request("POST", endpoint, data)
         return response.json()
+
+    @classmethod
+    def buy(cls, data):
+        """Buy a shipment based on the data passed"""
+
