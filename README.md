@@ -26,33 +26,22 @@ python3 app.py
 
 **cURL**
 
-Replace `123...` with the API key:
-
 ```bash
-./curl.sh 123...
+./curl.sh
 ```
 
 **Python**
 
 ```python
-import os
-from dotenv import load_dotenv
-import withbond
-
-load_dotenv()
-API_KEY = os.getenv('API_KEY')
-
-CUSTOMER = withbond.Shipment.create(
-	data={
-		'api_key': API_KEY,
-        'test': 'lala,
-        # TODO
-	}
-)
+python3 test.py  
 ```
 
 ## Development
 
 ```bash
-# TODO
+# Install dev dependencies
+pip3 install -e ."[dev]"
+
+# Lint the project
+pylint withbond/*.py
 ```
