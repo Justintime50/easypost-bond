@@ -1,5 +1,5 @@
 import withbond
 
-shipment = withbond.Shipment.retrieve('194f64f2-c188-11ea-bd2b-acde48001122')
+shipment = withbond.Shipment.retrieve('d66bb710-c198-11ea-9baf-acde48001122')
 
 print(shipment)

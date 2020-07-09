@@ -19,7 +19,6 @@ class Client():
 
     @classmethod
     def request(cls, httpMethod, endpoint, data=None):
-        
         """Build the API request and return it to the method invoking it"""
         response = requests.request(httpMethod, endpoint, headers=HEADERS, data=data)
         return response
