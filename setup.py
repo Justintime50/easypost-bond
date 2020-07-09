@@ -4,6 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 REQUIREMENTS = [
+    'flask >= 1.1.2',
     'requests >= 1.0.0',
     'python-dotenv >= 0.10.0'
 ]

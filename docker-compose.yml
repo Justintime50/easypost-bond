@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+        withbond:
+                build: .
+                container_name: withbond
+                restart: always

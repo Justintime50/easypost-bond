@@ -19,7 +19,11 @@ cp .env.example .env
 ### Start the API
 
 ```bash
+# Barebones
 python3 app.py
+
+# Docker
+docker-compose up -d
 ```
 
 ### Hit the API

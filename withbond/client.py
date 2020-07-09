@@ -3,9 +3,10 @@ import os
 from dotenv import load_dotenv
 import requests
 
+# Setup headers
 load_dotenv()
 API_KEY = os.getenv('WITHBOND_API_KEY')
-headers = {
+HEADERS = {
             'X-BOND-KEY': API_KEY,
             'Content-Type': 'application/json'
           }
@@ -20,5 +21,5 @@ class Client():
     def request(cls, httpMethod, endpoint, data):
         
         """Build the API request and return it to the method invoking it"""
-        response = requests.request(httpMethod, endpoint, headers=headers, data=data)
+        response = requests.request(httpMethod, endpoint, headers=HEADERS, data=data)
         return response
