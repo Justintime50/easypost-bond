@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../.env
+source ../../.env
 
 curl --location --request POST https://public-api.int01.withbond.io/api/v1/orders \
     --header "X-BOND-KEY: $WITHBOND_API_KEY" \

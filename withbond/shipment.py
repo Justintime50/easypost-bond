@@ -8,7 +8,7 @@ class Shipment():
     def retrieve(cls, data):
         """Retrieve a shipment by ID"""
         endpoint = f'{Client.API_BASE_URL}/orders/brand-order/{data}'
-        response = Client.request("GET", endpoint, data)
+        response = Client.request("GET", endpoint)
         return response.json()
 
     @classmethod
