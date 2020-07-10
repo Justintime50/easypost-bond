@@ -52,15 +52,15 @@ ep_data = """{
     }
 }"""
 
-# # Create Shipment
-# response = requests.request(
-#     'POST', 'http://localhost:5000/shipments', data=ep_data, headers=headers)
-# print(response.text)
-
-# Buy Shipment
+# Create Shipment
 response = requests.request(
-    'POST', 'http://localhost:5000/shipments/shp_ydnr3z2gkkxsu8myjue8ckze7wyovjox/buy')
+    'POST', 'http://localhost:5000/shipments', data=ep_data, headers=headers)
 print(response.text)
+
+# # Buy Shipment
+# response = requests.request(
+#     'POST', 'http://localhost:5000/shipments/shp_ydnr3z2gkkxsu8myjue8ckze7wyovjox/buy')
+# print(response.text)
 
 # # Retrieve Shipment
 # response = requests.request(

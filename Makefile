@@ -4,7 +4,6 @@ help:
 install: ## Install the complete service locally
 	pip3 install -e ."[dev]"
 	cp .env.example .env
-	echo "Update the WITHBOND_API_KEY in .env"
 
 run: ## Run the service locally
 	python3 app.py

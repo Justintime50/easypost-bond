@@ -43,7 +43,8 @@ class Shipment():
 
         return json_data  # don't return `.json()` here as this is already done by update above
 
-    # TODO: This should not be an externally available method, only used internally to update the shipment_id
+    # TODO: This should not be an externally available method,
+    # TODO: cont... - only used internally to update the shipment_id
     @ classmethod
     def update(cls, data, bond_id=None):
         """Update a shipment"""
