@@ -29,8 +29,8 @@ class Client():
             'No Withbond base URL present. Please correct and restart the service.')
 
     @classmethod
-    def request(cls, httpMethod, endpoint, data=None):
+    def request(cls, http_method, endpoint, data=None):
         """Build the API request and return it to the method invoking it"""
         request = requests.request(
-            httpMethod, endpoint, headers=HEADERS, data=data)
+            http_method, endpoint, headers=HEADERS, data=data)
         return request

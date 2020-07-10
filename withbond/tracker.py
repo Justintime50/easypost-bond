@@ -1,5 +1,6 @@
 import json
 from .shipment import Shipment
+import withbond.tracker_translate as convertJson
 
 
 class Tracker():
@@ -11,21 +12,22 @@ class Tracker():
         tracking_status = shipment['status']
         mapped_status = Tracker.map_statuses(tracking_status)
 
-        json_status = json.dumps(mapped_status, indent=4)
-        return json_status
+        jsonData = convertJson.wb_to_ep_request(shipment)
+
+        return jsonData
 
     # TODO: Change this from a classmethod as it should not be accessible outside itself
-    @classmethod
+    @ classmethod
     def map_statuses(cls, tracking_status):
         """Map the Withbond statuses to the EasyPost equivalent"""
         map = {
-            'PENDING': {"status": "pre_transit"},
-            'READY_FOR_DELIVERY': {"status": "in_transit"},
-            'ON_THE_WAY': {"status": "out_for_delivery"},
-            'SERVICING': {"status": "delivered"},
-            'DONE': {"status": "delivered"},
+            'PENDING': 'pre_transit',
+            'READY_FOR_DELIVERY': 'in_transit',
+            'ON_THE_WAY': 'out_for_delivery',
+            'SERVICING': 'delivered',
+            'DONE': 'delivered',
             # TODO: Should this instead map to "refunded"?
-            'CANCELLED': {"status": "cancelled"},
+            'CANCELLED': 'cancelled',
         }
 
         return map.get(tracking_status, 'Invalid tracking status')
