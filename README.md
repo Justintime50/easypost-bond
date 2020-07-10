@@ -33,7 +33,7 @@ docker-compose up -d
 **Web Request via Python (recommended)**
 
 ```bash
-python3 requests_create_shipment.py
+python3 requests_examples.py
 ```
 
 **cURL**

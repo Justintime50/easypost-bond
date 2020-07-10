@@ -1,6 +1,7 @@
 import json
 from .shipment import Shipment
 
+
 class Tracker():
     """All tracking methods"""
     @classmethod
@@ -19,11 +20,12 @@ class Tracker():
         """Map the Withbond statuses to the EasyPost equivalent"""
         map = {
             'PENDING': {"status": "pre_transit"},
-            'READY_FOR_DELIVERY': '"{status": "in_transit"}',
-            'ON_THE_WAY': 'out_for_delivery',
-            'SERVICING': 'delivered',
-            'DONE': 'delivered',
-            'CANCELLED': 'cancelled',
+            'READY_FOR_DELIVERY': {"status": "in_transit"},
+            'ON_THE_WAY': {"status": "out_for_delivery"},
+            'SERVICING': {"status": "delivered"},
+            'DONE': {"status": "delivered"},
+            # TODO: Should this instead map to "refunded"?
+            'CANCELLED': {"status": "cancelled"},
         }
-        
+
         return map.get(tracking_status, 'Invalid tracking status')

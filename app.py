@@ -1,5 +1,4 @@
 """Import API modules"""
-from threading import Thread
 import json
 import os
 from flask import Flask, request, abort
@@ -39,6 +38,15 @@ def buy_shipment(shipment_id):
 def retrieve_tracker(tracker_id):
     """Retrieve a tracker"""
     response = withbond.Tracker.retrieve(tracker_id)
+    print(response)  # TODO: For debugging only, remove when done
+
+    return response
+
+
+@API.route('/shipments/<shipment_id>/refund', methods=['POST'])
+def refund_shipment(shipment_id):
+    """Refund a shipment"""
+    response = withbond.Shipment.refund(shipment_id)
     print(response)  # TODO: For debugging only, remove when done
 
     return response

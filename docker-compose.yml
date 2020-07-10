@@ -1,6 +1,11 @@
 version: '3.7'
 services:
-        withbond:
-                build: .
-                container_name: withbond
-                restart: always
+    withbond:
+        build: .
+        container_name: withbond
+        restart: always
+        # volumes:
+        #     - ./withbond:/withbond/withbond
+        #     - ./app.py:/withbond/app.py
+        ports: 
+            - 5000:5000

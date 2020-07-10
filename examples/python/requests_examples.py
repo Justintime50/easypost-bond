@@ -34,9 +34,9 @@ data = """{
 }"""
 
 # Create Shipment
-response = requests.request(
-    'POST', 'http://localhost:5000/shipments', data=data)
-print(response.text)
+# response = requests.request(
+#     'POST', 'http://localhost:5000/shipments', data=data)
+# print(response.text)
 
 # # Buy Shipment
 # response = requests.request(
@@ -47,6 +47,11 @@ print(response.text)
 # response = requests.request(
 #     'GET', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
 # print(response.text)
+
+# # Refund Shipment
+response = requests.request(
+    'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')
+print(response.text)
 
 # # Retrieve Tracker
 # response = requests.request(

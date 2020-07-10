@@ -1,6 +1,7 @@
 """All Shipment methods are housed here"""
 import random
 import string
+import os
 from withbond.client import Client
 
 
@@ -49,6 +50,19 @@ class Shipment():
         response = Client.request('POST', endpoint, data)
 
         # TODO: Move to storing this in a DB instead of to disk
-        with open(f'{retrieved_shipment["brandOrderId"]}.pdf', 'wb') as label:
+        if not os.path.exists('labels'):
+            os.makedirs('labels')
+        with open(os.path.join('labels', f'{retrieved_shipment["brandOrderId"]}.pdf'), 'wb') as label:
             label.write(response.content)
         return "Label bought and saved to disk!"
+
+    @classmethod
+    def refund(cls, shipment_id):
+        """Refund/void/cancel a shipment"""
+        # First we retrieve the shipment by the brandOrderId
+        shipment = Shipment.retrieve(shipment_id)
+
+        # Next we refund the shipment with the bondOrderId
+        data = '{"status": "CANCELLED"}'
+        refund = Shipment.update(data, shipment['id'])
+        return refund
