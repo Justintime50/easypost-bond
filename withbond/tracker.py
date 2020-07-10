@@ -1,4 +1,5 @@
 import json
+import sys
 from .shipment import Shipment
 import withbond.tracker_translate as convertJson
 
@@ -9,10 +10,9 @@ class Tracker():
     def retrieve(cls, data):
         """Retrieve a shipment and return its tracking status"""
         shipment = Shipment.retrieve(data)
-        tracking_status = shipment['status']
-        mapped_status = Tracker.map_statuses(tracking_status)
-
-        jsonData = convertJson.wb_to_ep_request(shipment)
+        # tracking_status = shipment['status']
+        # mapped_status = Tracker.map_statuses(tracking_status)
+        jsonData = convertJson.ep_response(shipment)
 
         return jsonData
 

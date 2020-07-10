@@ -14,30 +14,71 @@ interactions:
     uri: http://localhost:5000/shipments/shp_k35ifn9gsq507i0nm3tdrv69cy7hagch
   response:
     body:
-      string: "{\n  \"brandOrderId\": \"shp_k35ifn9gsq507i0nm3tdrv69cy7hagch\", \n
-        \ \"creationDate\": \"2020-07-10T15:40:45.365Z\", \n  \"customer\": {\n    \"address\":
-        \"228 Park Ave S\", \n    \"brandContactId\": \"256\", \n    \"city\": \"New
-        York\", \n    \"country\": \"US\", \n    \"email\": \"example@example.com\",
-        \n    \"name\": \"John Smith\", \n    \"phone\": \"7531592522\", \n    \"state\":
-        \"NY\", \n    \"zipcode\": \"10003\"\n  }, \n  \"id\": \"BObeJ2R8uV\", \n
-        \ \"location\": \"Not yet with Bond\", \n  \"packages\": [\n    {\n      \"dimensions\":
-        {\n        \"height\": 2, \n        \"length\": 2, \n        \"unit\": \"IMPERIAL\",
-        \n        \"weight\": 20, \n        \"width\": 2\n      }, \n      \"id\":
-        \"BObeJ2R8uV00\", \n      \"items\": [\n        {\n          \"quantity\":
-        1, \n          \"sku\": \"1\"\n        }\n      ]\n    }\n  ], \n  \"receiver\":
-        {\n    \"address\": \"228 Park Ave S\", \n    \"brandContactId\": \"256\",
-        \n    \"city\": \"New York\", \n    \"country\": \"US\", \n    \"email\":
-        \"example@example.com\", \n    \"name\": \"John Smith\", \n    \"phone\":
-        \"+17531592522\", \n    \"state\": \"NY\", \n    \"zipcode\": \"10003\"\n
-        \ }, \n  \"site\": {\n    \"id\": \"5e3708f9779554c9b68646e1\", \n    \"name\":
-        \"New York City\"\n  }, \n  \"status\": \"PENDING\", \n  \"type\": \"DELIVER\"\n}\n"
+      string: '{"created_at": "2020-07-10T15:40:45.365Z", "is_return": "false", "messages":
+        [], "mode": "test", "options": {"currency": "USD", "payment": {"type": "SENDER"},
+        "date_advance": 0}, "reference": "null", "status": "pre_transit", "tracking_code":
+        "BObeJ2R8uV", "updated_at": "2020-07-10T15:40:45.365Z", "batch_id": "null",
+        "batch_status": "null", "batch_message": "null", "customs_info": "null", "from_address":
+        {"id": "null", "object": "Address", "created_at": "null", "updated_at": "null",
+        "name": "null", "company": "null", "street1": "null", "street2": "", "city":
+        "null", "state": "null", "zip": "null", "country": "null", "phone": "null",
+        "email": "null", "mode": "null", "carrier_facility": "null", "residential":
+        "null", "federal_tax_id": "null", "state_tax_id": "null", "verifications":
+        {}}, "insurance": "null", "order_id": "null", "parcel": {"id": "null", "object":
+        "Parcel", "created_at": "2020-07-10T15:40:45.365Z", "updated_at": "2020-07-10T15:40:45.365Z",
+        "length": 2, "width": 2, "height": 2, "predefined_package": "null", "weight":
+        20, "mode": "test"}, "postage_label": {"object": "PostageLabel", "id": "null",
+        "created_at": "2020-07-10T15:40:45.365Z", "updated_at": "2020-07-10T15:40:45.365Z",
+        "date_advance": 0, "integrated_form": "none", "label_date": "2020-07-10T15:40:45.365Z",
+        "label_resolution": 300, "label_size": "4x6", "label_type": "default", "label_file_type":
+        "image/pdf", "label_url": "null", "label_pdf_url": "null", "label_zpl_url":
+        "null", "label_epl2_url": "null", "label_file": "null"}, "rates": [{"id":
+        "null", "object": "Rate", "created_at": "2020-07-10T15:40:45.365Z", "updated_at":
+        "2020-07-10T15:40:45.365Z", "mode": "test", "service": "Standard", "carrier":
+        "WithBond", "rate": 10, "currency": "USD", "retail_rate": 10, "retail_currency":
+        "USD", "list_rate": 10, "list_currency": "USD", "delivery_days": "null", "delivery_date":
+        "null", "delivery_date_guaranteed": "false", "est_delivery_days": "null",
+        "shipment_id": "shp_k35ifn9gsq507i0nm3tdrv69cy7hagch", "carrier_account_id":
+        "null"}], "refund_status": "null", "scan_form": "null", "selected_rate": {"id":
+        "null", "object": "Rate", "created_at": "2020-07-10T15:40:45.365Z", "updated_at":
+        "2020-07-10T15:40:45.365Z", "mode": "test", "service": "Standard", "carrier":
+        "WithBond", "rate": 10, "currency": "USD", "retail_rate": 10, "retail_currency":
+        "USD", "list_rate": 10, "list_currency": "USD", "delivery_days": "null", "delivery_date":
+        "null", "delivery_date_guaranteed": "false", "est_delivery_days": "null",
+        "shipment_id": "shp_k35ifn9gsq507i0nm3tdrv69cy7hagch", "carrier_account_id":
+        "null"}, "tracker": {"id": "null", "object": "Tracker", "mode": "test", "tracking_code":
+        "BObeJ2R8uV", "status": "pre_transit", "status_detail": "pre_transit", "created_at":
+        "2020-07-10T15:40:45.365Z", "updated_at": "2020-07-10T15:40:45.365Z", "signed_by":
+        "null", "weight": "null", "est_delivery_date": "null", "shipment_id": "shp_k35ifn9gsq507i0nm3tdrv69cy7hagch",
+        "carrier": "WithBond", "tracking_details": [], "fees": [], "carrier_detail":
+        "null", "public_url": "null"}, "to_address": {"id": "null", "object": "Address",
+        "created_at": "2020-07-10T15:40:45.365Z", "updated_at": "2020-07-10T15:40:45.365Z",
+        "name": "John Smith", "company": "", "street1": "228 Park Ave S", "street2":
+        "", "city": "New York", "state": "NY", "zip": "10003", "country": "US", "phone":
+        "John Smith", "email": "example@example.com", "mode": "test", "carrier_facility":
+        "null", "residential": "null", "federal_tax_id": "null", "state_tax_id": "null",
+        "verifications": {}}, "usps_zone": 1, "return_address": {"id": "null", "object":
+        "Address", "created_at": "null", "updated_at": "null", "name": "null", "company":
+        "null", "street1": "null", "street2": "", "city": "null", "state": "null",
+        "zip": "null", "country": "null", "phone": "null", "email": "null", "mode":
+        "null", "carrier_facility": "null", "residential": "null", "federal_tax_id":
+        "null", "state_tax_id": "null", "verifications": {}}, "buyer_address": {"id":
+        "null", "object": "Address", "created_at": "2020-07-10T15:40:45.365Z", "updated_at":
+        "2020-07-10T15:40:45.365Z", "name": "John Smith", "company": "", "street1":
+        "228 Park Ave S", "street2": "", "city": "New York", "state": "NY", "zip":
+        "10003", "country": "US", "phone": "John Smith", "email": "example@example.com",
+        "mode": "test", "carrier_facility": "null", "residential": "null", "federal_tax_id":
+        "null", "state_tax_id": "null", "verifications": {}}, "forms": [], "fees":
+        [{"object": "Fee", "type": "LabelFee", "amount": "0.01000", "charged": "true",
+        "refunded": "false"}], "id": "shp_k35ifn9gsq507i0nm3tdrv69cy7hagch", "object":
+        "Shipment"}'
     headers:
       Content-Length:
-      - '1138'
+      - '4624'
       Content-Type:
-      - application/json
+      - text/html; charset=utf-8
       Date:
-      - Fri, 10 Jul 2020 15:52:21 GMT
+      - Fri, 10 Jul 2020 16:57:43 GMT
       Server:
       - Werkzeug/1.0.1 Python/3.7.8
     status:

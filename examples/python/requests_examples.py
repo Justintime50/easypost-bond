@@ -62,17 +62,17 @@ ep_data = """{
 #     'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/buy')
 # print(response.text)
 
-# Retrieve Shipment
-response = requests.request(
-    'GET', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
-print(response.text)
+# # Retrieve Shipment
+# response = requests.request(
+#     'GET', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
+# print(response.text)
 
 # # Refund Shipment
 # response = requests.request(
 #     'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')
 # print(response.text)
 
-# # Retrieve Tracker
-# response = requests.request(
-#     'GET', 'http://localhost:5000/trackers/shp_g76kl8qe99d467sy2q00dly1olav3yfy')
-# print(response.text)
+# Retrieve Tracker
+response = requests.request(
+    'GET', 'http://localhost:5000/trackers/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
+print(response.text)

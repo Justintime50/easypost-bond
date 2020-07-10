@@ -15,14 +15,16 @@ class Shipment():
         endpoint = f'{Client.API_BASE_URL}/orders/brand-order/{data}'
         response = Client.request('GET', endpoint)
 
-        jsonData = convertJson.wb_to_ep_response(response.json())
+        bond_shipment_data = response.json()
+        jsonData = convertJson.wb_to_ep_response(bond_shipment_data)
 
         return jsonData
 
     @classmethod
     def create(cls, data):
-        jsonData = convertJson.ep_to_wb_request(data)
         """Create a shipment based on the data passed"""
+        jsonData = convertJson.ep_to_wb_request(data)
+
         # First we create the shipment
         create_endpoint = f'{Client.API_BASE_URL}/orders'
         create_shipment = Client.request('POST', create_endpoint, jsonData)
@@ -35,8 +37,7 @@ class Shipment():
         data = f'{{"brandOrderId": "{ep_shipment_id}" }}'
         update_shipment = Shipment.update(data, bond_shipment_data['id'])
 
-        ep_response = update_shipment
-        jsonData = convertJson.wb_to_ep_response(ep_response)
+        jsonData = convertJson.wb_to_ep_response(update_shipment)
 
         return jsonData  # don't return `.json()` here as this is already done by update above
 
