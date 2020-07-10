@@ -30,13 +30,19 @@ docker-compose up -d
 
 ### Hit the API
 
+**Web Request via Python (recommended)**
+
+```bash
+python3 requests_create_shipment.py
+```
+
 **cURL**
 
 ```bash
 ./create.sh
 ```
 
-**Python**
+**Python (like a client library)**
 
 ```python
 python3 create_shipment.py  

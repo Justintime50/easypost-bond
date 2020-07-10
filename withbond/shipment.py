@@ -1,6 +1,7 @@
 """All Shipment methods are housed here"""
+import random
+import string
 from withbond.client import Client
-import uuid
 
 
 class Shipment():
@@ -12,8 +13,6 @@ class Shipment():
         response = Client.request('GET', endpoint)
         return response.json()
 
-    # /orders enpoint is not implemented for this demo as easypost would already provide this functionality
-
     @classmethod
     def create(cls, data):
         """Create a shipment based on the data passed"""
@@ -22,8 +21,8 @@ class Shipment():
         create_shipment = Client.request('POST', create_endpoint, data)
         bond_shipment_data = create_shipment.json()
 
-        # for mocking purposes, when complete, EasyPost would generate this
-        ep_shipment_id = uuid.uuid1()
+        # For mocking purposes only, when complete, EasyPost would generate this
+        ep_shipment_id = f'shp_{"".join(random.choice(string.ascii_lowercase + string.digits) for _ in range(32))}'
 
         # Next we update the shipment to associate it with the EasyPost shipment_id
         data = f'{{"brandOrderId": "{ep_shipment_id}" }}'
