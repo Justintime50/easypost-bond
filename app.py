@@ -1,21 +1,21 @@
 """Import API modules"""
 import json
 import os
-from flask import Flask, request, abort
+from flask import Flask, request
 from dotenv import load_dotenv
 import withbond
 
 load_dotenv()
 API = Flask(__name__)
-HOST = os.getenv('HOST')
-PORT = os.getenv('PORT')
-DEBUG = os.getenv('DEBUG')
+HOST = os.getenv('HOST', '127.0.0.1')
+PORT = os.getenv('PORT', 5000)
+DEBUG = os.getenv('DEBUG', True)
 
 
 @API.route('/shipments', methods=['POST'])
 def create_shipment():
     """Create a shipment"""
-    response = json.dumps(withbond.Shipment.create(request.data))
+    response = withbond.Shipment.create(request.data)
     if bool(DEBUG) is True:
         print(response)
     return response

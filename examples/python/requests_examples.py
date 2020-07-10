@@ -55,7 +55,7 @@ ep_data = """{
 # Create Shipment
 response = requests.request(
     'POST', 'http://localhost:5000/shipments', data=ep_data, headers=headers)
-print(response.json())
+print(response.text)
 
 # # Buy Shipment
 # response = requests.request(

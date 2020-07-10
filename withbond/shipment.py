@@ -35,7 +35,7 @@ class Shipment():
         ep_response = update_shipment
         jsonData = convertJson.wb_to_ep_response(ep_response)
 
-        return jsonData
+        return jsonData  # don't return `.json()` here as this is already done by update above
 
     # TODO: This should not be an externally available method, only used internally to update the shipment_id
     @classmethod
