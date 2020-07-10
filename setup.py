@@ -27,6 +27,7 @@ setuptools.setup(
     extras_require={
         'dev': [
             'pylint >= 2.5.0',
+            'vcr >= 4.0.0'
         ]
     },
     python_requires='>=3.6',

@@ -14,7 +14,10 @@ class Shipment():
         """Retrieve a shipment by ID"""
         endpoint = f'{Client.API_BASE_URL}/orders/brand-order/{data}'
         response = Client.request('GET', endpoint)
-        return response.json()
+
+        jsonData = convertJson.wb_to_ep_response(response.json())
+
+        return jsonData
 
     @classmethod
     def create(cls, data):
