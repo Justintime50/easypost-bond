@@ -1,9 +1,58 @@
 import json 
-import withbond.tracker
-from static_data import FLAT_RATE, SERVICE_LEVEL
+from .static_data import FLAT_RATE, SERVICE_LEVEL
+
+def ep_to_wb_request(jsonData):
+	ep_data = json.loads(jsonData)
+
+	wb_request =	{
+					    "type": "DELIVER",
+					    "customer": {
+					        "brandContactId": "256",
+					        "name": ep_data["shipment"]["to_address"]["name"],
+					        "email": ep_data["shipment"]["to_address"]["email"],
+					        "phone": ep_data["shipment"]["to_address"]["phone"],
+					        "zipcode": ep_data["shipment"]["to_address"]["zip"],
+					        "address": ep_data["shipment"]["to_address"]["street1"],
+					        "city": ep_data["shipment"]["to_address"]["city"],
+					        "state": ep_data["shipment"]["to_address"]["state"],
+					        "country": ep_data["shipment"]["to_address"]["country"]
+					    },
+					    "receiver": {
+					        "brandContactId": "256",
+					        "name": ep_data["shipment"]["buyer_address"]["name"],
+					        "email": ep_data["shipment"]["buyer_address"]["email"],
+					        "phone": ep_data["shipment"]["buyer_address"]["phone"],
+					        "zipcode": ep_data["shipment"]["buyer_address"]["zip"],
+					        "address": ep_data["shipment"]["buyer_address"]["street1"],
+					        "city": ep_data["shipment"]["buyer_address"]["city"],
+					        "state": ep_data["shipment"]["buyer_address"]["state"],
+					        "country": ep_data["shipment"]["buyer_address"]["country"]
+					    },
+					    "packages": [
+					        {
+					            "items": [
+					                {
+					                    "sku": "1",
+					                    "quantity": 1
+					                }
+					            ],
+					            "dimensions": {
+					                "unit": "IMPERIAL",
+					                "height": ep_data["shipment"]["parcel"]["height"],
+					                "width": ep_data["shipment"]["parcel"]["width"],
+					                "length": ep_data["shipment"]["parcel"]["length"],
+					                "weight": ep_data["shipment"]["parcel"]["weight"]
+					            }
+					        }
+					    ]
+					}
+
+	return json.dumps(wb_request)
 
 def wb_to_ep_response(jsonData):
-	wb_data = json.loads(jsonData)
+	tmp = json.dumps(jsonData)
+	wb_data = json.loads(tmp)
+
 	status = ""
 
 	if(wb_data["status"] ==  "PENDING"):
@@ -23,8 +72,6 @@ def wb_to_ep_response(jsonData):
 
 	if(wb_data["status"] ==  "CANCELLED"):
 		status = "cancelled"
-
-	print(wb_data["packages"][0]["dimensions"]["height"])
 
 	ep_response =	{
 					    "created_at": wb_data["creationDate"],
@@ -245,4 +292,4 @@ def wb_to_ep_response(jsonData):
 					    "id": wb_data["brandOrderId"],
 					    "object": "Shipment"
 					}
-	return ep_response
+	return json.dumps(ep_response)
