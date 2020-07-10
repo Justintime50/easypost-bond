@@ -1,15 +1,15 @@
+"""Import modules"""
 import unittest
-import os
 import json
 import vcr
 import requests
-import withbond
 
 
 class TestShipment(unittest.TestCase):
-
+    """Test Shipment Functionality"""
     @vcr.use_cassette()
-    def test_shipment_create(self):
+    @classmethod
+    def test_shipment_create(cls):
         """Test creating a shipment and receiving an EasyPost response"""
         data = """
             {
@@ -283,7 +283,8 @@ class TestShipment(unittest.TestCase):
         }
 
     @vcr.use_cassette()
-    def test_shipment_retrieve(self):
+    @classmethod
+    def test_shipment_retrieve(cls):
         """Test retrieving a shipment and receiving an EasyPost response"""
         response = requests.request(
             'GET', 'http://localhost:5000/shipments/shp_k35ifn9gsq507i0nm3tdrv69cy7hagch')
@@ -510,17 +511,19 @@ class TestShipment(unittest.TestCase):
         }
 
     @vcr.use_cassette()
-    def test_shipment_buy(self):
+    @classmethod
+    def test_shipment_buy(cls):
         """Test buying a shipment and receiving a label"""
         response = requests.request(
-            'GET', 'http://localhost:5000/trackers/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
+            'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/buy')
 
         assert response.status_code == 200
         # assert os.path.isfile(
         #     'labels/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69.pdf')
 
     @vcr.use_cassette()
-    def test_shipment_refund(self):
+    @classmethod
+    def test_shipment_refund(cls):
         """Test retrieving a shipment and receiving an EasyPost response"""
         response = requests.request(
             'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')

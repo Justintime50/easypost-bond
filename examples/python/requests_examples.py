@@ -57,22 +57,22 @@ ep_data = """{
 #     'POST', 'http://localhost:5000/shipments', data=ep_data, headers=headers)
 # print(response.text)
 
-# # Buy Shipment
-# response = requests.request(
-#     'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/buy')
-# print(response.text)
+# Buy Shipment
+response = requests.request(
+    'POST', 'http://localhost:5000/shipments/shp_ydnr3z2gkkxsu8myjue8ckze7wyovjox/buy')
+print(response.text)
 
 # # Retrieve Shipment
 # response = requests.request(
-#     'GET', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
+#     'GET', 'http://localhost:5000/shipments/shp_ydnr3z2gkkxsu8myjue8ckze7wyovjox')
 # print(response.text)
 
 # # Refund Shipment
 # response = requests.request(
-#     'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')
+#     'POST', 'http://localhost:5000/shipments/shp_ydnr3z2gkkxsu8myjue8ckze7wyovjox/refund')
 # print(response.text)
 
-# Retrieve Tracker
-response = requests.request(
-    'GET', 'http://localhost:5000/trackers/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69')
-print(response.text)
+# # Retrieve Tracker
+# response = requests.request(
+#     'GET', 'http://localhost:5000/trackers/shp_ydnr3z2gkkxsu8myjue8ckze7wyovjox')
+# print(response.text)

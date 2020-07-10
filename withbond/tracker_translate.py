@@ -1,12 +1,12 @@
+"""Import modules"""
 import json
-from .static_data import FLAT_RATE, SERVICE_LEVEL
 
 
-def ep_response(jsonData):
+def ep_response(json_data):
+    """Translate an Withbond response to an EasyPost response"""
+    data = json.loads(json_data)
 
-    data = json.loads(jsonData)
-
-    ep_response = {
+    ep_response_data = {
         "id": "trk_...",
         "object": "Tracker",
         "mode": "test",
@@ -48,4 +48,4 @@ def ep_response(jsonData):
         ]
     }
 
-    return json.dumps(ep_response)
+    return json.dumps(ep_response_data)

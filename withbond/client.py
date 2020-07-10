@@ -1,4 +1,5 @@
 """This file builds the API request and houses shared constants"""
+# pylint: disable=R0903
 import os
 import sys
 from dotenv import load_dotenv
@@ -18,13 +19,13 @@ class Client():
     """The client class builds the API requests"""
     API_BASE_URL = BASE_URL
     # Run some sanity checks on configuration
-    if API_KEY == None:
+    if API_KEY is None:
         sys.exit(
             'No Withbond API key present. Please correct and restart the service.')
-    if HEADERS == None:
+    if HEADERS is None:
         sys.exit(
             'No Withbond headers present. Please correct and restart the service.')
-    if API_BASE_URL == None:
+    if API_BASE_URL is None:
         sys.exit(
             'No Withbond base URL present. Please correct and restart the service.')
 
