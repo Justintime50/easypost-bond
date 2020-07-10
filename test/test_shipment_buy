@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: http://localhost:5000/trackers/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69
+  response:
+    body:
+      string: "{\n    \"status\": \"cancelled\"\n}"
+    headers:
+      Content-Length:
+      - '29'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 10 Jul 2020 15:55:06 GMT
+      Server:
+      - Werkzeug/1.0.1 Python/3.7.8
+    status:
+      code: 200
+      message: OK
+version: 1

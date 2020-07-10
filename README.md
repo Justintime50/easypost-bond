@@ -47,9 +47,10 @@ python3 create_shipment.py
 
 ## Development
 
-Ensure you've installed the project first:
-
 ```bash
 # Lint the entire project
 make lint
+
+# Run unit tests
+make test
 ```

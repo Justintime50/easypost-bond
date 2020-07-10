@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.24.0
+    method: GET
+    uri: http://localhost:5000/shipments/shp_k35ifn9gsq507i0nm3tdrv69cy7hagch
+  response:
+    body:
+      string: "{\n  \"brandOrderId\": \"shp_k35ifn9gsq507i0nm3tdrv69cy7hagch\", \n
+        \ \"creationDate\": \"2020-07-10T15:40:45.365Z\", \n  \"customer\": {\n    \"address\":
+        \"228 Park Ave S\", \n    \"brandContactId\": \"256\", \n    \"city\": \"New
+        York\", \n    \"country\": \"US\", \n    \"email\": \"example@example.com\",
+        \n    \"name\": \"John Smith\", \n    \"phone\": \"7531592522\", \n    \"state\":
+        \"NY\", \n    \"zipcode\": \"10003\"\n  }, \n  \"id\": \"BObeJ2R8uV\", \n
+        \ \"location\": \"Not yet with Bond\", \n  \"packages\": [\n    {\n      \"dimensions\":
+        {\n        \"height\": 2, \n        \"length\": 2, \n        \"unit\": \"IMPERIAL\",
+        \n        \"weight\": 20, \n        \"width\": 2\n      }, \n      \"id\":
+        \"BObeJ2R8uV00\", \n      \"items\": [\n        {\n          \"quantity\":
+        1, \n          \"sku\": \"1\"\n        }\n      ]\n    }\n  ], \n  \"receiver\":
+        {\n    \"address\": \"228 Park Ave S\", \n    \"brandContactId\": \"256\",
+        \n    \"city\": \"New York\", \n    \"country\": \"US\", \n    \"email\":
+        \"example@example.com\", \n    \"name\": \"John Smith\", \n    \"phone\":
+        \"+17531592522\", \n    \"state\": \"NY\", \n    \"zipcode\": \"10003\"\n
+        \ }, \n  \"site\": {\n    \"id\": \"5e3708f9779554c9b68646e1\", \n    \"name\":
+        \"New York City\"\n  }, \n  \"status\": \"PENDING\", \n  \"type\": \"DELIVER\"\n}\n"
+    headers:
+      Content-Length:
+      - '1138'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 10 Jul 2020 15:52:21 GMT
+      Server:
+      - Werkzeug/1.0.1 Python/3.7.8
+    status:
+      code: 200
+      message: OK
+version: 1

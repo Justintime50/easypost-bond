@@ -1,0 +1,33 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.24.0
+    method: POST
+    uri: http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund
+  response:
+    body:
+      string: "{\n  \"message\": \"The order is already on its way. Changes are no
+        longer allowed\", \n  \"name\": \"ForbiddenError\", \n  \"status\": 403\n}\n"
+    headers:
+      Content-Length:
+      - '129'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 10 Jul 2020 15:55:06 GMT
+      Server:
+      - Werkzeug/1.0.1 Python/3.7.8
+    status:
+      code: 200
+      message: OK
+version: 1
