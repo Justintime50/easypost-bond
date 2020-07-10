@@ -18,7 +18,6 @@ class Shipment():
     def create(cls, data):
         """Create a shipment based on the data passed"""
         # First we create the shipment
-        # TODO: Bond requires a brandPackageId when creating orders, we are looking to get that made optional
         create_endpoint = f'{Client.API_BASE_URL}/orders'
         create_shipment = Client.request('POST', create_endpoint, data)
         bond_shipment_data = create_shipment.json()
@@ -28,7 +27,7 @@ class Shipment():
 
         # Next we update the shipment to associate it with the EasyPost shipment_id
         data = f'{{"brandOrderId": "{ep_shipment_id}" }}'
-        update_shipment = Shipment.update(data, bond_shipment_data["id"])
+        update_shipment = Shipment.update(data, bond_shipment_data['id'])
         return update_shipment
 
     # TODO: This should not be an externally available method, only used internally to update the shipment_id
