@@ -1,31 +1,28 @@
 # WithBond EasyPost Carrier Integration
 
-The carrier integration for WithBond on the EasyPost platform.
+The carrier integration for WithBond on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! **Do not distribute.**
 
-Carrier documentation can be found here: https://docs.withbond.io.
-Carrier Integration documentation can be found [here](https://docs.google.com/document/d/1yzQqW2oj7JBHL12wsprN1LAu19u9qyUFtLGHWSLWAXE/edit#heading=h.plemo0ol8nvx).
-Additional Carrier Integration documentation notes can be found in the [DOCUMENTATION.md](DOCUMENTATION.md) file.
-
-Showcased at the first ever 2020 EasyPost Hackathon! **Do not distribute.**
+* Carrier documentation can be found here: https://docs.withbond.io.
+* Additional Carrier Integration documentation notes can be found in the [DOCUMENTATION.md](DOCUMENTATION.md) file.
 
 ## Install
 
 ```bash
-pip3 install -e ."[dev]"
-
-cp .env.example .env
+make install
 ```
+
+Change your `.env` variables as needed.
 
 ## Usage
 
-### Start the API
+### Start the API Server
 
 ```bash
-# Barebones
-python3 app.py
+# Run the dev service locally
+make run
 
-# Docker
-docker-compose up -d
+# Run the prod service in Docker
+make docker
 ```
 
 ### Hit the API
@@ -36,24 +33,23 @@ docker-compose up -d
 python3 requests_examples.py
 ```
 
-**cURL**
-
-```bash
-./create.sh
-```
-
 **Python (like a client library)**
 
 ```python
 python3 create_shipment.py  
 ```
 
-## Development
+**cURL (deprecated)**
 
 ```bash
-# Install dev dependencies
-pip3 install -e ."[dev]"
+./create.sh
+```
 
-# Lint the project
-pylint withbond/*.py
+## Development
+
+Ensure you've installed the project first:
+
+```bash
+# Lint the entire project
+make lint
 ```

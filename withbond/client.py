@@ -10,12 +10,12 @@ HEADERS = {
     'X-BOND-KEY': API_KEY,
     'Content-Type': 'application/json'
 }
+BASE_URL = os.getenv('BASE_URL')
 
 
 class Client():
-    """The client class builds the API request and is used throughout the library"""
-    VERSION = '1.0.0'
-    API_BASE_URL = "https://public-api.int01.withbond.io/api/v1"
+    """The client class builds the API requests"""
+    API_BASE_URL = BASE_URL
 
     @classmethod
     def request(cls, httpMethod, endpoint, data=None):

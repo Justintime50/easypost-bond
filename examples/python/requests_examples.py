@@ -1,6 +1,11 @@
 import requests
 import json
 
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Basic 123abc'
+}
+
 data = """{
     "type": "DELIVER",
     "receiver": {
@@ -34,9 +39,9 @@ data = """{
 }"""
 
 # Create Shipment
-# response = requests.request(
-#     'POST', 'http://localhost:5000/shipments', data=data)
-# print(response.text)
+response = requests.request(
+    'POST', 'http://localhost:5000/shipments', data=data, headers=headers)
+print(response.text)
 
 # # Buy Shipment
 # response = requests.request(
@@ -49,9 +54,9 @@ data = """{
 # print(response.text)
 
 # # Refund Shipment
-response = requests.request(
-    'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')
-print(response.text)
+# response = requests.request(
+#     'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')
+# print(response.text)
 
 # # Retrieve Tracker
 # response = requests.request(

@@ -2,7 +2,7 @@
 import random
 import string
 import os
-from withbond.client import Client
+from .client import Client
 
 
 class Shipment():

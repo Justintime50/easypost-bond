@@ -16,12 +16,11 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='http://github.com/justintime50/withbond-easypost',
-    author='Justintime50',
+    author='Justintime50, bradleywalsh',
     license='MIT',
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     install_requires=REQUIREMENTS,
