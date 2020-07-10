@@ -8,7 +8,7 @@ headers = {
 
 ep_data = """{
                 "shipment":{
-                    "carrier_account":{"id":"ca_25c91ff37f19468bb6098b2ffeaf10de"},
+                    "carrier_account":{"id":"ca_..."},
                     "from_address":{
                         "name":"Sara Rivera",
                         "street1":"16 Mulford Avenue",
