@@ -2,6 +2,8 @@
 import random
 import string
 import os
+import json
+import withbond.translate as convertJson
 from .client import Client
 
 
@@ -16,10 +18,11 @@ class Shipment():
 
     @classmethod
     def create(cls, data):
+        jsonData = convertJson.ep_to_wb_request(data)
         """Create a shipment based on the data passed"""
         # First we create the shipment
         create_endpoint = f'{Client.API_BASE_URL}/orders'
-        create_shipment = Client.request('POST', create_endpoint, data)
+        create_shipment = Client.request('POST', create_endpoint, jsonData)
         bond_shipment_data = create_shipment.json()
 
         # For mocking purposes only, when complete, EasyPost would generate this
@@ -28,7 +31,11 @@ class Shipment():
         # Next we update the shipment to associate it with the EasyPost shipment_id
         data = f'{{"brandOrderId": "{ep_shipment_id}" }}'
         update_shipment = Shipment.update(data, bond_shipment_data['id'])
-        return update_shipment
+
+        ep_response = update_shipment
+        jsonData = convertJson.wb_to_ep_response(ep_response)
+
+        return jsonData
 
     # TODO: This should not be an externally available method, only used internally to update the shipment_id
     @classmethod
