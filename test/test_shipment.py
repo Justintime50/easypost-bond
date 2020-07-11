@@ -7,7 +7,7 @@ import requests
 
 class TestShipment(unittest.TestCase):
     """Test Shipment Functionality"""
-    @vcr.use_cassette()
+    @vcr.use_cassette('test/fixtures/cassettes/test_shipment_create.yml')
     @classmethod
     def test_shipment_create(cls):
         """Test creating a shipment and receiving an EasyPost response"""
@@ -282,7 +282,7 @@ class TestShipment(unittest.TestCase):
             "object": "Shipment"
         }
 
-    @vcr.use_cassette()
+    @vcr.use_cassette('test/fixtures/cassettes/test_shipment_retrieve.yml')
     @classmethod
     def test_shipment_retrieve(cls):
         """Test retrieving a shipment and receiving an EasyPost response"""
@@ -510,7 +510,7 @@ class TestShipment(unittest.TestCase):
             "object": "Shipment"
         }
 
-    @vcr.use_cassette()
+    @vcr.use_cassette('test/fixtures/cassettes/test_shipment_buy.yml')
     @classmethod
     def test_shipment_buy(cls):
         """Test buying a shipment and receiving a label"""
@@ -521,10 +521,10 @@ class TestShipment(unittest.TestCase):
         # assert os.path.isfile(
         #     'labels/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69.pdf')
 
-    @vcr.use_cassette()
+    @vcr.use_cassette('test/fixtures/cassettes/test_shipment_refund.yml')
     @classmethod
     def test_shipment_refund(cls):
-        """Test retrieving a shipment and receiving an EasyPost response"""
+        """Test refunding a shipment and receiving an EasyPost response"""
         response = requests.request(
             'POST', 'http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund')
 

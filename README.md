@@ -1,6 +1,6 @@
 # WithBond EasyPost Carrier Integration
 
-The carrier integration for WithBond on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! **Do not distribute.**
+The carrier integration for WithBond on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! This project stands as a proof of concept and template should EasyPost decide to integrate WithBond on their platform. **Do not distribute.**
 
 * Carrier documentation can be found here: https://docs.withbond.io.
 * Additional Carrier Integration documentation notes can be found in the [DOCUMENTATION.md](DOCUMENTATION.md) file.

@@ -7,7 +7,7 @@ import requests
 
 class TestTracker(unittest.TestCase):
     """Test Tracking functionality"""
-    @vcr.use_cassette()
+    @vcr.use_cassette('test/fixtures/cassettes/test_tracker_retrieve.yml')
     @classmethod
     def test_tracker_retrieve(cls):
         """Test retrieving a tracker and receiving an EasyPost response"""

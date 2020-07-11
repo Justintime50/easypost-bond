@@ -1,5 +1,5 @@
 """Import modules"""
-import withbond.tracker_translate as convertJson
+import withbond.translate as convertJson
 from .shipment import Shipment
 
 
@@ -11,7 +11,7 @@ class Tracker():
         shipment = Shipment.retrieve(data)
         # tracking_status = shipment['status']
         # mapped_status = Tracker.map_statuses(tracking_status)
-        json_data = convertJson.ep_response(shipment)
+        json_data = convertJson.ep_response_tracker(shipment)
 
         return json_data
 
