@@ -1,10 +1,11 @@
-"""Import modules"""
 import json
+
 from .static_data import FLAT_RATE, SERVICE_LEVEL
 
 
 def ep_to_wb_request_shipment(json_data):
-    """Translate a Withbond response to an EasyPost response"""
+    """Translate a Withbond response to an EasyPost response
+    """
     ep_data = json.loads(json_data)
 
     wb_request = {
@@ -52,8 +53,10 @@ def ep_to_wb_request_shipment(json_data):
 
     return json.dumps(wb_request)
 
+
 def wb_to_ep_response_shipment(json_data):
-    """Translate a Withbond response to an EasyPost response"""
+    """Translate a Withbond response to an EasyPost response
+    """
     tmp = json.dumps(json_data)
     wb_data = json.loads(tmp)
 
@@ -299,8 +302,10 @@ def wb_to_ep_response_shipment(json_data):
 
     return json.dumps(ep_response)
 
+
 def ep_response_tracker(json_data):
-    """Translate an Withbond response to an EasyPost response"""
+    """Translate an Withbond response to an EasyPost response
+    """
     data = json.loads(json_data)
 
     ep_response_data = {

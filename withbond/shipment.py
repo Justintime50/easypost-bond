@@ -1,17 +1,18 @@
-"""All Shipment methods are housed here"""
-import random
-import string
 import json
 import os
+import random
+import string
+
 import withbond.translate as convertJson
+
 from .client import Client
 
 
 class Shipment():
-    """Shipment methods"""
-    @classmethod
+    @staticmethod
     def retrieve(cls, data):
-        """Retrieve a shipment by ID"""
+        """Retrieve a shipment by ID
+        """
         endpoint = f'{Client.API_BASE_URL}/orders/brand-order/{data}'
         response = Client.request('GET', endpoint)
 
@@ -20,9 +21,10 @@ class Shipment():
 
         return json_data
 
-    @classmethod
+    @staticmethod
     def create(cls, data):
-        """Create a shipment based on the data passed"""
+        """Create a shipment based on the data passed
+        """
         json_data = convertJson.ep_to_wb_request_shipment(data)
 
         # First we create the shipment
@@ -43,18 +45,18 @@ class Shipment():
 
         return json_data  # don't return `.json()` here as this is already done by update above
 
-    # TODO: This should not be an externally available method,
-    # TODO: cont... - only used internally to update the shipment_id
-    @ classmethod
-    def update(cls, data, bond_id=None):
-        """Update a shipment"""
+    @staticmethod
+    def _update(cls, data, bond_id=None):
+        """Update a shipment
+        """
         endpoint = f'{Client.API_BASE_URL}/orders/bond-order/{bond_id}'
         response = Client.request('PATCH', endpoint, data)
         return response.json()
 
-    @ classmethod
+    @staticmethod
     def buy(cls, data):
-        """Buy a shipment based on the data passed"""
+        """Buy a shipment based on the data passed
+        """
         # First we retrieve the shipment to get the bondId which is required to generate the label
         retrieved_shipment = Shipment.retrieve(data)
         json_data = json.loads(retrieved_shipment)
@@ -74,13 +76,14 @@ class Shipment():
             label.write(response.content)
         return "Label bought and saved to disk!"
 
-    @ classmethod
+    @staticmethod
     def refund(cls, shipment_id):
-        """Refund/void/cancel a shipment"""
+        """Refund/void/cancel a shipment
+        """
         # First we retrieve the shipment by the brandOrderId
         shipment = Shipment.retrieve(shipment_id)
 
         # Next we refund the shipment with the bondOrderId
         data = '{"status": "CANCELLED"}'
-        refund = Shipment.update(data, shipment['id'])
+        refund = Shipment._update(data, shipment['id'])
         return refund

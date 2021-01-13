@@ -10,30 +10,28 @@ venv:
 	ln -snf ~/.venv/withbond/ venv
 	venv/bin/pip install -e ."[dev]"
 
-## install - Install the complete service locally
+## install - Install the project locally
 install: | venv
-	cp .env.example .env
 
 ## clean - Remove the virtual environment and clear out .pyc files
 clean:
 	rm -rf ~/.venv/withbond/ venv
 	find . -name '*.pyc' -delete
-	find . -name '.env' -delete
-
-## run - Run the service locally
-run:
-	venv/bin/python app.py
-
-## docker - Run the service in a docker container (always builds)
-docker:
-	docker-compose up -d --build
+	rm -rf dist
+	rm -rf build
+	rm -rf *.egg-info
 
 ## lint - Lint the project
 lint:
-	venv/bin/pylint withbond/*.py
+	venv/bin/flake8 withbond/*.py
+	venv/bin/flake8 test/unit/*.py
 
 ## test - Test the project
 test:
-	venv/bin/python -m unittest
+	venv/bin/pytest
 
-.PHONY: help install clean run docker lint test 
+## coverage - Test the project and generate an HTML coverage report
+coverage:
+	venv/bin/pytest --cov=withbond --cov-branch --cov-report=html
+
+.PHONY: help install clean lint test coverage
