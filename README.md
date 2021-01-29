@@ -10,21 +10,16 @@ The carrier integration for WithBond on the EasyPost platform. Showcased at the 
 ## Install
 
 ```bash
+# Change your `.env` variables as needed including adding the API key
+cp .env.example .env
+
+# Install the project
 make install
 ```
 
-Change your `.env` variables as needed including adding the API key.
-
 ## Usage
 
-### Start the API Server
-
-```bash
-# Run the dev service locally
-make run
-```
-
-### Hit the API
+Create, buy, retrieve, and refund shipments all from the example script along with retrieving tracker info by changing values and running the script.
 
 ```bash
 venv/bin/python examples/requests_examples.py
@@ -33,6 +28,9 @@ venv/bin/python examples/requests_examples.py
 ## Development
 
 ```bash
+# Start the Flask API
+make run
+
 # Lint the entire project
 make lint
 
