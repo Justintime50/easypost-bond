@@ -1,6 +1,6 @@
 # WithBond EasyPost Carrier Integration
 
-[![Build Status](https://github.com/Justintime50/withbond-easpost/workflows/build/badge.svg)](https://github.com/Justintime50/withbond-easpost/actions)
+[![Build Status](https://github.com/Justintime50/withbond-easypost/workflows/build/badge.svg)](https://github.com/Justintime50/withbond-easpost/actions)
 
 The carrier integration for WithBond on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! This project stands as a proof of concept and template should EasyPost decide to integrate WithBond on their platform. Note it was built as a Hackathon project and lacks rigor and best practices. **Do not distribute.**
 
