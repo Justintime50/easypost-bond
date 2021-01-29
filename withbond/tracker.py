@@ -1,23 +1,22 @@
-import withbond.translate as convertJson
-
-from .shipment import Shipment
+from withbond.shipment import Shipment
+from withbond.translate import ep_response_tracker
 
 
 class Tracker():
     @staticmethod
-    def retrieve(cls, data):
+    def retrieve(data):
         """Retrieve a shipment and return its tracking status
         """
         shipment = Shipment.retrieve(data)
         # tracking_status = shipment['status']
         # mapped_status = Tracker._map_statuses(tracking_status)
-        json_data = convertJson.ep_response_tracker(shipment)
+        json_data = ep_response_tracker(shipment)
 
         return json_data
 
     # TODO: This is deprecated and may be removed? Or we can move this to the translate files
     @staticmethod
-    def _map_statuses(cls, tracking_status):
+    def _map_statuses(tracking_status):
         """Map the Withbond statuses to the EasyPost equivalent
         """
         map_values = {

@@ -20,3 +20,4 @@ Additional technical documentation can be found on this [Google Doc](https://doc
 1. Tracking on Withbond doesn't provide tracking details, only the current status. This will require us to continually poll created shipments that have not yet been delivered for updates and store the statuses along the way in a DB. There is no accompanying message either.
    - Along these lines, Withbond does not even provide a tracking endpoint meaning you have to retrieve the shipment and interpret the status from those details.
 1. There is a single rate and a single service level for this carrier - this required us to add custom logic to do rating in-house as there is no "rating endpoint" which luckily was simple enough with a single item each.
+1. There are places where the bondId and brandId are used. If implemented, we'll want to ensure we pass these around correctly, preferably only using one if we can.

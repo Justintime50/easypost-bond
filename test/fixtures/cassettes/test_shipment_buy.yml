@@ -11,21 +11,21 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: POST
-    uri: http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/buy
+    uri: http://localhost:5000/shipments/shp_5l76p1fp2fovc8vwntmg76mniiygdkl1/buy
   response:
     body:
-      string: Label bought and saved to disk!
+      string: Label bought and saved to disk at labels/shp_5l76p1fp2fovc8vwntmg76mniiygdkl1.pdf!
     headers:
       Content-Length:
-      - '31'
+      - '82'
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 10 Jul 2020 19:42:55 GMT
+      - Fri, 29 Jan 2021 03:29:02 GMT
       Server:
-      - Werkzeug/1.0.1 Python/3.7.8
+      - Werkzeug/1.0.1 Python/3.9.1
     status:
       code: 200
       message: OK

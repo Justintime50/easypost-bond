@@ -1,9 +1,10 @@
-"""Import API modules"""
-import json
 import os
-from flask import Flask, request
+
 from dotenv import load_dotenv
-import withbond
+from flask import Flask, request
+
+from withbond.shipment import Shipment
+from withbond.tracker import Tracker
 
 load_dotenv()
 API = Flask(__name__)
@@ -12,46 +13,46 @@ PORT = os.getenv('PORT', 5000)
 DEBUG = os.getenv('DEBUG', True)
 
 
+# Create a shipment
 @API.route('/shipments', methods=['POST'])
 def create_shipment():
-    """Create a shipment"""
-    response = withbond.Shipment.create(request.data)
+    response = Shipment.create(request)
     if bool(DEBUG) is True:
         print(response)
     return response
 
 
+# Retrieve a shipment
 @API.route('/shipments/<shipment_id>', methods=['GET'])
 def retrieve_shipment(shipment_id):
-    """Retrieve a shipment"""
-    response = withbond.Shipment.retrieve(shipment_id)
+    response = Shipment.retrieve(shipment_id)
     if bool(DEBUG) is True:
         print(response)
     return response
 
 
+# Buy a shipment
 @API.route('/shipments/<shipment_id>/buy', methods=['POST'])
 def buy_shipment(shipment_id):
-    """Buy a shipment"""
-    response = withbond.Shipment.buy(shipment_id)
+    response = Shipment.buy(shipment_id)
     if bool(DEBUG) is True:
         print(response)
     return response
 
 
+# Retrieve a tracker
 @API.route('/trackers/<tracker_id>', methods=['GET'])
 def retrieve_tracker(tracker_id):
-    """Retrieve a tracker"""
-    response = withbond.Tracker.retrieve(tracker_id)
+    response = Tracker.retrieve(tracker_id)
     if bool(DEBUG) is True:
         print(response)
     return response
 
 
+# Refund a shipment
 @API.route('/shipments/<shipment_id>/refund', methods=['POST'])
 def refund_shipment(shipment_id):
-    """Refund a shipment"""
-    response = withbond.Shipment.refund(shipment_id)
+    response = Shipment.refund(shipment_id)
     if bool(DEBUG) is True:
         print(response)
     return response

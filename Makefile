@@ -13,6 +13,10 @@ venv:
 ## install - Install the project locally
 install: | venv
 
+## run - Runs the flask server
+run:
+	venv/bin/python withbond/app.py
+
 ## clean - Remove the virtual environment and clear out .pyc files
 clean:
 	rm -rf ~/.venv/withbond/ venv
@@ -34,4 +38,4 @@ test:
 coverage:
 	venv/bin/pytest --cov=withbond --cov-branch --cov-report=html
 
-.PHONY: help install clean lint test coverage
+.PHONY: help install run clean lint test coverage

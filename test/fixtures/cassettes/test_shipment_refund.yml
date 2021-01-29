@@ -11,22 +11,37 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: POST
-    uri: http://localhost:5000/shipments/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69/refund
+    uri: http://localhost:5000/shipments/shp_d9nkhebsxwlba32u4zopnoyxn3xgstvt/refund
   response:
     body:
-      string: "{\n  \"message\": \"The order is already on its way. Changes are no
-        longer allowed\", \n  \"name\": \"ForbiddenError\", \n  \"status\": 403\n}\n"
+      string: "{\n  \"brandOrderId\": \"shp_d9nkhebsxwlba32u4zopnoyxn3xgstvt\", \n
+        \ \"creationDate\": \"2021-01-29T03:29:19.551Z\", \n  \"customer\": {\n    \"address1\":
+        \"228 Park Ave S\", \n    \"brandContactId\": \"256\", \n    \"city\": \"New
+        York\", \n    \"country\": \"US\", \n    \"email\": \"example@example.com\",
+        \n    \"name\": \"John Smith\", \n    \"phone\": \"7531592522\", \n    \"state\":
+        \"NY\", \n    \"zipcode\": \"10003\"\n  }, \n  \"displayId\": null, \n  \"id\":
+        \"BOwe2rXyFC\", \n  \"location\": \"Not yet with Bond\", \n  \"packages\":
+        [\n    {\n      \"dimensions\": {\n        \"height\": 2, \n        \"length\":
+        2, \n        \"weight\": 20, \n        \"width\": 2\n      }, \n      \"id\":
+        \"BOwe2rXyFC00\", \n      \"items\": [\n        {\n          \"quantity\":
+        1, \n          \"sku\": \"1\"\n        }\n      ]\n    }\n  ], \n  \"receiver\":
+        {\n    \"address1\": \"228 Park Ave S\", \n    \"brandContactId\": \"256\",
+        \n    \"city\": \"New York\", \n    \"country\": \"US\", \n    \"email\":
+        \"example@example.com\", \n    \"name\": \"John Smith\", \n    \"phone\":
+        \"+17531592522\", \n    \"state\": \"NY\", \n    \"zipcode\": \"10003\"\n
+        \ }, \n  \"site\": {\n    \"id\": \"5e37091f779554eaff8646e3\", \n    \"name\":
+        \"UEV\"\n  }, \n  \"status\": \"CANCELLED\", \n  \"type\": \"DELIVER\"\n}\n"
     headers:
       Content-Length:
-      - '129'
+      - '1125'
       Content-Type:
       - application/json
       Date:
-      - Fri, 10 Jul 2020 15:55:06 GMT
+      - Fri, 29 Jan 2021 03:31:26 GMT
       Server:
-      - Werkzeug/1.0.1 Python/3.7.8
+      - Werkzeug/1.0.1 Python/3.9.1
     status:
       code: 200
       message: OK

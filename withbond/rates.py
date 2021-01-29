@@ -1,12 +1,12 @@
-from .static_data import FLAT_RATE, SERVICE_LEVEL
+from withbond.static_data import FLAT_RATE, SERVICE_LEVEL
 
 
 def get_rates():
     """Get the Withbond rates and services
     """
     rates = {
-        "service": SERVICE_LEVEL,
-        "rate": FLAT_RATE
+        'service': SERVICE_LEVEL,
+        'rate': FLAT_RATE
     }
 
-    return {"rates": rates}
+    return {'rates': rates}

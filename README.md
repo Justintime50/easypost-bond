@@ -1,6 +1,8 @@
 # WithBond EasyPost Carrier Integration
 
-The carrier integration for WithBond on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! This project stands as a proof of concept and template should EasyPost decide to integrate WithBond on their platform. **Do not distribute.**
+[![Build Status](https://github.com/Justintime50/withbond-easpost/workflows/build/badge.svg)](https://github.com/Justintime50/withbond-easpost/actions)
+
+The carrier integration for WithBond on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! This project stands as a proof of concept and template should EasyPost decide to integrate WithBond on their platform. Note it was built as a Hackathon project and lacks rigor and best practices. **Do not distribute.**
 
 * Carrier documentation can be found here: https://docs.withbond.io.
 * Additional Carrier Integration documentation notes can be found in the [DOCUMENTATION.md](DOCUMENTATION.md) file.
@@ -11,7 +13,7 @@ The carrier integration for WithBond on the EasyPost platform. Showcased at the 
 make install
 ```
 
-Change your `.env` variables as needed.
+Change your `.env` variables as needed including adding the API key.
 
 ## Usage
 
@@ -20,29 +22,12 @@ Change your `.env` variables as needed.
 ```bash
 # Run the dev service locally
 make run
-
-# Run the prod service in Docker
-make docker
 ```
 
 ### Hit the API
 
-**Web Request via Python (recommended)**
-
 ```bash
-python3 requests_examples.py
-```
-
-**Python (like a client library)**
-
-```python
-python3 create_shipment.py  
-```
-
-**cURL (deprecated)**
-
-```bash
-./create.sh
+venv/bin/python examples/requests_examples.py
 ```
 
 ## Development

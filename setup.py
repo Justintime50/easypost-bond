@@ -11,7 +11,7 @@ REQUIREMENTS = [
 
 setuptools.setup(
     name='withbond',
-    version='0.1.0',
+    version='0.2.0',
     description='The carrier integration for WithBond on the EasyPost platform.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -27,6 +27,7 @@ setuptools.setup(
     extras_require={
         'dev': [
             'pytest >= 6.0.0',
+            'pytest-cov >= 2.10.0',
             'flake8 >= 3.8.0',
             'vcrpy >= 4.1.0'
         ]

@@ -9,31 +9,31 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.24.0
+      - python-requests/2.25.1
     method: GET
-    uri: http://localhost:5000/trackers/shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69
+    uri: http://localhost:5000/trackers/shp_5l76p1fp2fovc8vwntmg76mniiygdkl1
   response:
     body:
       string: '{"id": "trk_...", "object": "Tracker", "mode": "test", "tracking_code":
-        "shp_d6ix6whetqsvj8uq3utjw0s3auwhdk69", "status": "cancelled", "created_at":
-        "2020-07-10T01:42:13.203Z", "updated_at": "2020-07-10T01:42:13.203Z", "signed_by":
+        "shp_5l76p1fp2fovc8vwntmg76mniiygdkl1", "status": "pre_transit", "created_at":
+        "2021-01-29T02:53:24.467Z", "updated_at": "2021-01-29T02:53:24.467Z", "signed_by":
         "null", "weight": "null", "est_delivery_date": "null", "shipment_id": "null",
         "carrier": "WithBond", "public_url": "https://track.easypost.com/djE6...",
         "tracking_details": [{"object": "TrackingDetail", "message": "Shipping Label
-        Created", "status": "cancelled", "datetime": "2020-07-10T01:42:13.203Z", "source":
-        "WithBond", "tracking_location": {"object": "TrackingLocation", "city": "New
-        York", "state": "New York", "country": "US", "zip": "10003"}}], "carrier_detail":
-        "null", "fees": [{"object": "Fee", "type": "TrackerFee", "amount": "0.00000",
-        "charged": true, "refunded": false}]}'
+        Created", "status": "pre_transit", "datetime": "2021-01-29T02:53:24.467Z",
+        "source": "WithBond", "tracking_location": {"object": "TrackingLocation",
+        "city": "New York", "state": "New York", "country": "US", "zip": "10003"}}],
+        "carrier_detail": "null", "fees": [{"object": "Fee", "type": "TrackerFee",
+        "amount": "0.00000", "charged": true, "refunded": false}]}'
     headers:
       Content-Length:
-      - '819'
+      - '823'
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 10 Jul 2020 17:37:23 GMT
+      - Fri, 29 Jan 2021 02:53:53 GMT
       Server:
-      - Werkzeug/1.0.1 Python/3.7.8
+      - Werkzeug/1.0.1 Python/3.9.1
     status:
       code: 200
       message: OK

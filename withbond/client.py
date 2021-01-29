@@ -18,20 +18,21 @@ class Client():
     """
     API_BASE_URL = BASE_URL
     # Run some sanity checks on configuration
-    if API_KEY is None:
-        sys.exit(
-            'No Withbond API key present. Please correct and restart the service.')
+    if API_KEY is None or API_KEY == '':
+        sys.exit('No Withbond API key present. Please correct and restart the service.')
     if HEADERS is None:
-        sys.exit(
-            'No Withbond headers present. Please correct and restart the service.')
-    if API_BASE_URL is None:
-        sys.exit(
-            'No Withbond base URL present. Please correct and restart the service.')
+        sys.exit('No Withbond headers present. Please correct and restart the service.')
+    if API_BASE_URL is None or API_BASE_URL == '':
+        sys.exit('No Withbond base URL present. Please correct and restart the service.')
 
     @staticmethod
-    def request(cls, http_method, endpoint, data=None):
+    def request(http_method, endpoint, data={}):
         """Build the API request and return it to the method invoking it
         """
         request = requests.request(
-            http_method, endpoint, headers=HEADERS, data=data)
+            http_method,
+            endpoint,
+            headers=HEADERS,
+            json=data
+        )
         return request

@@ -1,6 +1,6 @@
 import json
 
-from .static_data import FLAT_RATE, SERVICE_LEVEL
+from withbond.static_data import FLAT_RATE, SERVICE_LEVEL
 
 
 def ep_to_wb_request_shipment(json_data):
@@ -16,7 +16,8 @@ def ep_to_wb_request_shipment(json_data):
             "email": ep_data["shipment"]["to_address"]["email"],
             "phone": ep_data["shipment"]["to_address"]["phone"],
             "zipcode": ep_data["shipment"]["to_address"]["zip"],
-            "address": ep_data["shipment"]["to_address"]["street1"],
+            "address1": ep_data["shipment"]["to_address"]["street1"],
+            "address2": ep_data["shipment"]["to_address"].get("street2"),
             "city": ep_data["shipment"]["to_address"]["city"],
             "state": ep_data["shipment"]["to_address"]["state"],
             "country": ep_data["shipment"]["to_address"]["country"]
@@ -27,7 +28,8 @@ def ep_to_wb_request_shipment(json_data):
             "email": ep_data["shipment"]["buyer_address"]["email"],
             "phone": ep_data["shipment"]["buyer_address"]["phone"],
             "zipcode": ep_data["shipment"]["buyer_address"]["zip"],
-            "address": ep_data["shipment"]["buyer_address"]["street1"],
+            "address1": ep_data["shipment"]["buyer_address"]["street1"],
+            "address2": ep_data["shipment"]["buyer_address"].get("street2"),
             "city": ep_data["shipment"]["buyer_address"]["city"],
             "state": ep_data["shipment"]["buyer_address"]["state"],
             "country": ep_data["shipment"]["buyer_address"]["country"]
@@ -51,14 +53,13 @@ def ep_to_wb_request_shipment(json_data):
         ]
     }
 
-    return json.dumps(wb_request)
+    return json.loads(json.dumps(wb_request))
 
 
 def wb_to_ep_response_shipment(json_data):
     """Translate a Withbond response to an EasyPost response
     """
-    tmp = json.dumps(json_data)
-    wb_data = json.loads(tmp)
+    wb_data = json_data
 
     status = ""
 
@@ -108,7 +109,7 @@ def wb_to_ep_response_shipment(json_data):
             "name": "null",
             "company": "null",
             "street1": "null",
-            "street2": "",
+            "street2": "null",
             "city": "null",
             "state": "null",
             "zip": "null",
@@ -226,8 +227,8 @@ def wb_to_ep_response_shipment(json_data):
             "updated_at": wb_data["creationDate"],
             "name": wb_data["receiver"]["name"],
             "company": "",
-            "street1": wb_data["receiver"]["address"],
-            "street2": "",
+            "street1": wb_data["receiver"]["address1"],
+            "street2": wb_data["receiver"].get("address2"),
             "city": wb_data["receiver"]["city"],
             "state": wb_data["receiver"]["state"],
             "zip": wb_data["receiver"]["zipcode"],
@@ -271,8 +272,8 @@ def wb_to_ep_response_shipment(json_data):
             "updated_at": wb_data["creationDate"],
             "name": wb_data["customer"]["name"],
             "company": "",
-            "street1": wb_data["customer"]["address"],
-            "street2": "",
+            "street1": wb_data["customer"]["address1"],
+            "street2": wb_data["customer"].get("address2"),
             "city": wb_data["customer"]["city"],
             "state": wb_data["customer"]["state"],
             "zip": wb_data["customer"]["zipcode"],
@@ -300,13 +301,13 @@ def wb_to_ep_response_shipment(json_data):
         "object": "Shipment"
     }
 
-    return json.dumps(ep_response)
+    return json.loads(json.dumps(ep_response))
 
 
 def ep_response_tracker(json_data):
     """Translate an Withbond response to an EasyPost response
     """
-    data = json.loads(json_data)
+    data = json_data
 
     ep_response_data = {
         "id": "trk_...",
