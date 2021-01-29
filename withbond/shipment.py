@@ -33,7 +33,6 @@ class Shipment():
             json_data
         )
         bond_shipment_data = create_shipment.json()
-        print('lala3', bond_shipment_data)
 
         # For mocking purposes only, when complete, EasyPost would generate this
         ep_shipment_id = 'shp_' + \
