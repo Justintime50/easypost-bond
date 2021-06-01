@@ -1,10 +1,10 @@
 import json
 
-from withbond.static_data import FLAT_RATE, SERVICE_LEVEL
+from bond.static_data import FLAT_RATE, SERVICE_LEVEL
 
 
 def ep_to_wb_request_shipment(json_data):
-    """Translate a Withbond response to an EasyPost response
+    """Translate a bond response to an EasyPost response
     """
     ep_data = json.loads(json_data)
 
@@ -57,7 +57,7 @@ def ep_to_wb_request_shipment(json_data):
 
 
 def wb_to_ep_response_shipment(json_data):
-    """Translate a Withbond response to an EasyPost response
+    """Translate a bond response to an EasyPost response
     """
     wb_data = json_data
 
@@ -163,7 +163,7 @@ def wb_to_ep_response_shipment(json_data):
                 "updated_at": wb_data["creationDate"],
                 "mode": "test",
                 "service": SERVICE_LEVEL,
-                "carrier": "WithBond",
+                "carrier": "bond",
                 "rate": FLAT_RATE,
                 "currency": "USD",
                 "retail_rate": FLAT_RATE,
@@ -187,7 +187,7 @@ def wb_to_ep_response_shipment(json_data):
             "updated_at": wb_data["creationDate"],
             "mode": "test",
             "service": SERVICE_LEVEL,
-            "carrier": "WithBond",
+            "carrier": "bond",
             "rate": FLAT_RATE,
             "currency": "USD",
             "retail_rate": FLAT_RATE,
@@ -214,7 +214,7 @@ def wb_to_ep_response_shipment(json_data):
             "weight": "null",
             "est_delivery_date": "null",
             "shipment_id": wb_data["brandOrderId"],
-            "carrier": "WithBond",
+            "carrier": "bond",
             "tracking_details": [],
             "fees": [],
             "carrier_detail": "null",
@@ -305,7 +305,7 @@ def wb_to_ep_response_shipment(json_data):
 
 
 def ep_response_tracker(json_data):
-    """Translate an Withbond response to an EasyPost response
+    """Translate an bond response to an EasyPost response
     """
     data = json_data
 
@@ -321,7 +321,7 @@ def ep_response_tracker(json_data):
         "weight": "null",
         "est_delivery_date": "null",
         "shipment_id": "null",
-        "carrier": "WithBond",
+        "carrier": "bond",
         "public_url": "https://track.easypost.com/djE6...",
         "tracking_details": [
             {
@@ -329,7 +329,7 @@ def ep_response_tracker(json_data):
                 "message": "Shipping Label Created",
                 "status": data["status"],
                 "datetime": data["created_at"],
-                "source": "WithBond",
+                "source": "bond",
                 "tracking_location": {
                     "object": "TrackingLocation",
                     "city": "New York",

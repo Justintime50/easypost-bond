@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.0
+
+* Changed references from `Withbond` to `Bond`
+* Pinned dependencies
+* Archived project
+
 ## v0.2.0
 
 * Added new requirements from the carrier

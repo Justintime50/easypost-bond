@@ -5,7 +5,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv('WITHBOND_API_KEY')
+API_KEY = os.getenv('BOND_API_KEY')
 HEADERS = {
     'X-BOND-KEY': API_KEY,
     'Content-Type': 'application/json'
@@ -19,11 +19,11 @@ class Client():
     API_BASE_URL = BASE_URL
     # Run some sanity checks on configuration
     if API_KEY is None or API_KEY == '':
-        sys.exit('No Withbond API key present. Please correct and restart the service.')
+        sys.exit('No bond API key present. Please correct and restart the service.')
     if HEADERS is None:
-        sys.exit('No Withbond headers present. Please correct and restart the service.')
+        sys.exit('No bond headers present. Please correct and restart the service.')
     if API_BASE_URL is None or API_BASE_URL == '':
-        sys.exit('No Withbond base URL present. Please correct and restart the service.')
+        sys.exit('No bond base URL present. Please correct and restart the service.')
 
     @staticmethod
     def request(http_method, endpoint, data={}):

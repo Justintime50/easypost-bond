@@ -6,8 +6,8 @@ help:
 
 ## venv - Install the virtual environment
 venv:
-	$(VIRTUALENV) ~/.venv/withbond/
-	ln -snf ~/.venv/withbond/ venv
+	$(VIRTUALENV) ~/.venv/bond/
+	ln -snf ~/.venv/bond/ venv
 	venv/bin/pip install -e ."[dev]"
 
 ## install - Install the project locally
@@ -15,11 +15,11 @@ install: | venv
 
 ## run - Runs the flask server
 run:
-	venv/bin/python withbond/app.py
+	venv/bin/python bond/app.py
 
 ## clean - Remove the virtual environment and clear out .pyc files
 clean:
-	rm -rf ~/.venv/withbond/ venv
+	rm -rf ~/.venv/bond/ venv
 	find . -name '*.pyc' -delete
 	rm -rf dist
 	rm -rf build
@@ -27,15 +27,11 @@ clean:
 
 ## lint - Lint the project
 lint:
-	venv/bin/flake8 withbond/*.py
+	venv/bin/flake8 bond/*.py
 	venv/bin/flake8 test/unit/*.py
 
 ## test - Test the project
 test:
 	venv/bin/pytest
 
-## coverage - Test the project and generate an HTML coverage report
-coverage:
-	venv/bin/pytest --cov=withbond --cov-branch --cov-report=html
-
-.PHONY: help install run clean lint test coverage
+.PHONY: help install run clean lint test

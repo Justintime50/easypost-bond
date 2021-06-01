@@ -3,8 +3,8 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, request
 
-from withbond.shipment import Shipment
-from withbond.tracker import Tracker
+from bond.shipment import Shipment
+from bond.tracker import Tracker
 
 load_dotenv()
 API = Flask(__name__)

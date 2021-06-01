@@ -1,5 +1,5 @@
-from withbond.shipment import Shipment
-from withbond.translate import ep_response_tracker
+from bond.shipment import Shipment
+from bond.translate import ep_response_tracker
 
 
 class Tracker():
@@ -17,7 +17,7 @@ class Tracker():
     # TODO: This is deprecated and may be removed? Or we can move this to the translate files
     @staticmethod
     def _map_statuses(tracking_status):
-        """Map the Withbond statuses to the EasyPost equivalent
+        """Map the bond statuses to the EasyPost equivalent
         """
         map_values = {
             'PENDING': 'pre_transit',

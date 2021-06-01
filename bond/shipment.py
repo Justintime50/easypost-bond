@@ -2,9 +2,9 @@ import os
 import random
 import string
 
-from withbond.client import Client
-from withbond.translate import (ep_to_wb_request_shipment,
-                                wb_to_ep_response_shipment)
+from bond.client import Client
+from bond.translate import (ep_to_wb_request_shipment,
+                            wb_to_ep_response_shipment)
 
 
 class Shipment():

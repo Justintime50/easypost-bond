@@ -4,18 +4,25 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 REQUIREMENTS = [
-    'flask >= 1.1.2',
-    'requests >= 1.0.0',
-    'python-dotenv >= 0.10.0'
+    'flask == 1.*',
+    'python-dotenv == 0.17.*',
+    'requests == 2.*',
+]
+
+DEV_REQUIREMENTS = [
+    'flake8',
+    'pytest == 6.*',
+    'pytest-cov == 2.*',
+    'vcrpy >= 4.1.0'
 ]
 
 setuptools.setup(
-    name='withbond',
-    version='0.2.0',
-    description='The carrier integration for WithBond on the EasyPost platform.',
+    name='Bond',
+    version='0.3.0',
+    description='The carrier integration for Bond on the EasyPost platform.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='http://github.com/justintime50/withbond-easypost',
+    url='http://github.com/justintime50/easypost-bond',
     author='Justintime50, bradleywalsh',
     license='MIT',
     packages=setuptools.find_packages(),
@@ -25,12 +32,7 @@ setuptools.setup(
     ],
     install_requires=REQUIREMENTS,
     extras_require={
-        'dev': [
-            'pytest >= 6.0.0',
-            'pytest-cov >= 2.10.0',
-            'flake8 >= 3.8.0',
-            'vcrpy >= 4.1.0'
-        ]
+        'dev': DEV_REQUIREMENTS
     },
     python_requires='>=3.6',
 )
