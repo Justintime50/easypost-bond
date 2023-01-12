@@ -13,7 +13,7 @@ DEV_REQUIREMENTS = [
     "flake8 == 6.*",
     "pytest == 7.*",
     "pytest-cov == 4.*",
-    "vcrpy == 4.*.0",
+    "vcrpy == 4.*",
 ]
 
 setuptools.setup(
