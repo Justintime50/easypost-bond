@@ -2,12 +2,11 @@
 
 [![Build Status](https://github.com/Justintime50/easypost-bond/workflows/build/badge.svg)](https://github.com/Justintime50/easypost-bond/actions)
 
-A proof of concept carrier integration for `Bond` on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! This project provided a template that we later followed when EasyPost decided to integrate Bond on its platform. 
+A proof of concept carrier integration for `Bond` on the EasyPost platform. Showcased at the first ever 2020 EasyPost Hackathon! This project provided a template that we later followed when EasyPost decided to integrate Bond on its platform.
 
 **NOTE:** This project was built during a Hackathon and lacks rigor and best practices.
 
-* Carrier documentation can be found here: https://docs.withbond.io.
-* Additional Carrier Integration documentation notes can be found in the [DOCUMENTATION.md](DOCUMENTATION.md) file.
+* Carrier documentation can be found here: <https://docs.withbond.io>.
 
 ## Install
 
