@@ -10,7 +10,7 @@ REQUIREMENTS = [
 ]
 
 DEV_REQUIREMENTS = [
-    "flake8 == 6.*",
+    "flake8 == 5.*",
     "pytest == 7.*",
     "pytest-cov == 4.*",
     "vcrpy == 4.*",
